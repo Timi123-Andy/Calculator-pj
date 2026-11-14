@@ -1,0 +1,1 @@
+A responsive calculator application designed to perform basic mathematical operations, including addition, subtraction, multiplication, and division. It features a clean, user-friendly interface with interactive buttons and real-time calculations, providing a simple and efficient user experience.
