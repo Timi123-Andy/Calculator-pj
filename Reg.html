@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Auth System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .toggle {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .message {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: -5px;
+    }
+    #dashboard {
+      display: none;
+      text-align: center;
+    }
+    #dashboard h2 {
+      color: #4caf50;
+    }
+    #logoutBtn {
+      background-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+  <!-- Registration Form -->
+  <div class="container" id="registerPage">
+    <h2>Student Registration</h2>
+    <input type="text" id="regName" placeholder="Full Name" />
+    <input type="email" id="regEmail" placeholder="Email Address" />
+    <input type="tel" id="regPhone" placeholder="Phone Number" />
+    <input type="text" id="regDept" placeholder="Department" />
+    <select id="regLevel">
+      <option value="">Select Level</option>
+      <option value="ND1">ND1</option>
+      <option value="ND2">ND2</option>
+      <option value="HND1">HND1</option>
+      <option value="HND2">HND2</option>
+    </select>
+    <input type="password" id="regPass" placeholder="Password" />
+    <input type="password" id="regPass2" placeholder="Confirm Password" />
+    <button onclick="register()">Register</button>
+    <div class="toggle">Already have an account? 
+        <a href="#" onclick="togglePages()">Login</a></div>
+    <div class="message" id="regMessage"></div>
+  </div>  
+  <!-- Login Form -->  <div class="container" id="loginPage" style="display: none;">
+    <h2>Student Login</h2>
+    <input type="email" id="loginEmail" placeholder="Email Address" />
+    <input type="password" id="loginPass" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <div class="toggle">Don't have an account? <a href="#" onclick="togglePages()">Register</a></div>
+    <div class="message" id="loginMessage"></div>
+  </div>  
+  <!-- Dashboard -->  <div class="container" id="dashboard">
+    <h2>Welcome, <span id="dashName"></span>!</h2>
+    <p>Email: <span id="dashEmail"></span></p>
+    <p>Phone: <span id="dashPhone"></span></p>
+    <p>Department: <span id="dashDept"></span></p>
+    <p>Level: <span id="dashLevel"></span></p>
+    <button id="logoutBtn" onclick="logout()">Logout</button>
+  </div> 
+
+  <script src="Reg.js"></Script>
+  
+</body>
+</html>
